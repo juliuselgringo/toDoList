@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: grey;
+}
+
+#displayCreation{
+    width: 50vw;
+    height: 50vh;
+    margin: auto;
+}
