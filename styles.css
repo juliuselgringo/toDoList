@@ -4,22 +4,66 @@
 }
 
 html{
-    background-color: grey;
+    background-color: orange;
 }
 
-.display-creation{
+main{
     width: 50vw;
-    height: 50vh;
+ 
     margin: auto;
     padding: auto;
+    background-color: grey;
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
     text-align: center;
     border: 1px solid black;
 }
 
+.display-creation{
+    padding-top: 10vh;
+    margin-bottom: 70vh;
+}
+
+.new-task-display{
+    display: flex;
+    flex-direction: row;
+}
+
 .hidden{
     display: none;
+}
+
+
+
+.new-task-input{
+    margin: auto;
+    width: 40vw;
+}
+
+.tasks-display{
+    margin: auto;
+    margin-top: 2vh;
+    margin-bottom: 10vh;
+}
+
+#logo{
+    width: 20vw;
+    padding-top: 5vw;
+}
+
+button{
+    padding: 2px;
+    margin: 5px;
+    background-color: orange;
+}
+
+@media(max-width:800px){
+    main{
+        width: 100vw;
+    }
+    .new-task-display{
+        flex-direction: column;
+    }
 }

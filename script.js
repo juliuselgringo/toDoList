@@ -7,7 +7,8 @@ const addNewTaskBtn = document.getElementById("add-new-task-btn");
 const tasksDisplayBtn = document.getElementById("tasks-display-btn")
 
 // Tableau des tâches
-let tasksArray = [];
+let tasksArray = JSON.parse(localStorage.getItem("data")) || [];
+
 
 // Affichage saisie nouvelle tâche
 newTaskBtn.addEventListener("click", newTaskDisplayFct);
@@ -25,6 +26,7 @@ function addNewTaskFct(){
     tasksArray.unshift(newTaskInput.value);
     newTaskDisplayFct();
     lastTaskDisplay();
+    recordTasks();
 }
 
 // Affichage de la dernière tâche
@@ -44,10 +46,16 @@ function taskDisplayFct(){
     tasksArray.forEach((taskIn) => {
         const task = document.createElement("p");
         task.textContent = taskIn;
+        task.style.marginTop = "1em";
+        task.style.border = "2px solid black"
         tasksDisplay.appendChild(task);
         const delBtn = document.createElement("button");
         delBtn.textContent = "X";
         delBtn.id = taskIn;
+        delBtn.style.borderRadius = "100%";
+        delBtn.style.width = "1.5em";
+        delBtn.style.backgroundColor = "orange";
+        delBtn.style.marginLeft = "1em";
         task.appendChild(delBtn);
         
         // Supprimer une tâche
@@ -61,7 +69,7 @@ function taskDisplayFct(){
                     tasksArray.splice(key,1)
                 }        
             })
-            console.log(tasksArray)
+            recordTasks();
         }
     });
 }
@@ -69,3 +77,6 @@ function taskDisplayFct(){
 
 
 // Enregitrement des tâches dans localStorage
+function recordTasks(){
+    localStorage.setItem("data", JSON.stringify(tasksArray));
+}
