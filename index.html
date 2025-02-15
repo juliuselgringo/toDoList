@@ -8,12 +8,14 @@
 </head>
 <body>
     <main>
-        <div class="displayCreation">
+        <div class="display-creation" id="display-creation">
             <h1>To Do List</h1>
-            <button id="newTask" class="newTask" aria-label="newTaskFct">Nouvelle tâche</button>
-            <div id="newTaskDisplay"></div>
+            <div class="btn"><button id="new-task" class="new-task" aria-label="new-task-fct">Nouvelle tâche</button><button class="tasks-display-btn" id="tasks-display-btn">Afficher les tâches</button></div>
+            <div class="new-task-display hidden" id="new-task-display"><input type="text" class="new-task-input" id="new-task-input"><button class="add-new-task-btn" id="add-new-task-btn">Ajouter</button> </div>
+            <div class="tasks-display" id="tasks-display" ></div>
+            
         </div>
     </main>
     <script src="script.js"></script>
-</body>
+</body> 
 </html>

@@ -7,8 +7,19 @@ html{
     background-color: grey;
 }
 
-#displayCreation{
+.display-creation{
     width: 50vw;
     height: 50vh;
     margin: auto;
+    padding: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.hidden{
+    display: none;
 }
